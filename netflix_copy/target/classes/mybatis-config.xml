@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE configuration PUBLIC "-//mybatis.org//DTD Config 3.0//EN" "http://mybatis.org/dtd/mybatis-3-config.dtd">
+
+
+<configuration>
+<settings>
+<setting name="cacheEnabled" value="false"/>
+<setting name="jdbcTypeForNull" value="NULL"/>
+</settings>
+
+	<typeAliases>
+	
+		<typeAlias alias="AdminMemberVO" 
+		type="com.mgr.netflix.admin.member.vo.AdminMemberVO"/>
+		
+		
+		<typeAlias alias="AdminManagerVO" 
+		type="com.mgr.netflix.admin.manager.vo.AdminManagerVO"/>
+		
+		<typeAlias alias="ClientVO" 
+		type="com.mgr.netflix.client.vo.ClientVO"/>
+				
+		<typeAlias alias="Modify"
+		type="com.mgr.netflix.client.vo.ModifyClientVO"/>
+		
+		<typeAlias alias="ClientPaymentVO"
+		type="com.mgr.netflix.client.vo.ClientPaymentVO"/>	
+		
+		<typeAlias alias="ContentsVO"
+		type="com.mgr.netflix.contents.vo.ContentsVO"/>	
+		
+			
+	
+	</typeAliases>
+	
+<mappers>
+	<mapper resource="mapper/admin/member.xml"></mapper>
+	<mapper resource="mapper/admin/manager.xml"></mapper>
+	<mapper resource="mapper/client/client.xml"></mapper>			
+	<mapper resource="mapper/client/contents.xml"></mapper>			
+</mappers>
+</configuration>

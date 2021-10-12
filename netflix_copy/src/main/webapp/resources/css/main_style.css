@@ -1,0 +1,286 @@
+main {
+	width: 100%;
+	height: 100%;
+	padding: 0;
+	margin: 0;
+	color: white;
+	background: #141414;
+	position: relative;
+}
+
+.slider-frame {
+	position: relative;
+	margin: 0px auto;
+	overflow: hidden;
+}
+.slider-frame h2{
+	margin:-5px 0 0 40px;
+}
+.slider-frame .btn {
+	width: 40px;
+	height: 60%;
+	background: rgba(0, 0, 0, 0.3);
+	position: absolute;
+	top: 50px;
+	z-index: 1000;
+	font-size: 2rem;
+    font-weight: bold;
+    padding: 70px 7px;
+    text-indent: -9999px;
+}
+.slider-frame .btn:hover{
+	text-indent: 0;
+}
+.slider-frame .btn.prev {
+	left: 0px;
+}
+
+.slider-frame .btn.next {
+	right: 0px;
+}
+
+.slider-frame .slider-container {
+	transition: margin-left 0.2s ease, left 0.5s ease;
+	position: absolute;
+	left: 0;
+}
+
+.slider-frame .slider-container .slide {
+	background-color: #131313;
+	float: left;
+	position: relative;
+	top: 0;
+	transition: width 0.2s ease, height 0.2s ease, top 0.2s ease;
+	transition-delay:.6s;
+	margin: 0 5px;
+    box-shadow: 0px 0px 10px #000;
+   
+}
+
+.slider-frame .slider-container .slide img {
+	width: 100%;
+}
+
+.slider-frame .slider-container .slide:nth-child(even) {
+	/* background-color: blue; */
+	
+}
+
+.contents_btn {
+	display:none;
+	width: 95%;
+	margin: 5px auto;
+/* 	transition: display 0.2s ease; */
+	
+c
+}
+
+.contents_btn ul li {
+	float: left;
+	font-size: 1rem;
+	margin-right: 3%;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	padding: 2%;
+}
+
+.contents_btn ul li:nth-child(1) {
+	color: #141414;
+	border-color: #fff;
+	background-color: #fff;
+}
+
+.contents_btn ul li:nth-child(5) {
+	float: right;
+	margin-right: 0%;
+}
+
+.context_info {
+	display:none;
+	float: left;
+	width: 95%;
+	margin: 2% 0 0 3%;
+	font-weight: 600;
+/* 	transition-delay:0.6s; */
+}
+.popup_layer {
+	width: 100%;
+	height: 100%;
+	background-color: rgba(0, 0, 0, 0.7);
+	overflow-y: scroll;
+	overflow-x: hidden;
+	display: none;
+}
+.contents_layer {
+	width: 850px;
+	margin: 0px auto;
+	background-color: #131313;
+	z-index: 99999;
+	border-radius: 20px;
+	margin-top: 70px;
+}
+
+.contents_layer .layer_moviebox {
+	position: relative;
+}
+
+.contents_layer .layer_moviebox .layer_inner_info {
+	position: absolute;
+	top: 40%;
+	left: 5%;
+}
+
+.contents_layer .layer_moviebox .layer_inner_info img {
+    max-width: 400px;
+	margin-bottom: 20px;
+}
+
+.close_btn {
+	position: absolute;
+	top: 20px;
+	right: 20px;
+	font-size: 1.2rem;
+	background-color: #222222;
+	padding: 0.5%;
+	border-radius: 50%;
+}
+
+.contents_layer .layer_moviebox .layer_inner_info .layer_info_btn ul li
+	{
+	float: left;
+	font-size: 1.2rem;
+	margin-right: 1%;
+	border: 2px solid #fff;
+	border-radius: 50%;
+	padding: 5px;
+}
+
+.contents_layer .layer_moviebox .layer_inner_info .layer_info_btn ul li:nth-child(1)
+	{
+	border: none;
+	color: #000;
+	background-color: #fff;
+	border-radius: 3px;
+	padding: 5px 40px;
+}
+
+.layer_info_box {
+	width: 850px;
+}
+
+.layer_con_left {
+	width: 70%;
+	float: left;
+}
+
+.layer_con_right {
+	width: 30%;
+	float: right;
+}
+
+.layer_con_right p span a {
+	color: #fff;
+	text-decoration: none;
+}
+
+.layer_contnet_text_box {
+	width: 60%;
+	float: left;
+}
+
+.layer_info_box .layer_content_info {
+	float: left;
+	width: 70%;
+	margin: 2% 0 0 3%;
+	font-weight: 600;
+}
+
+.layer_info_box .layer_content_info .con_match {
+	color: #46D369;
+}
+
+.layer_contnet_text_box {
+	width: 70%;
+	margin: 2% 0 0 3%;
+}
+
+.layer_con_right p {
+	margin: 4% 3% 5% 3%;
+	font-size: 0.9rem;
+}
+
+.play_list_box {
+	width: 95%;
+	margin: 150px auto 0;
+}
+
+.play_list_top {
+	
+}
+
+.play_list_top h3 {
+	width: 100%;
+	font-size: 1.3rem;
+}
+
+#season_select {
+	float: right;
+	font-size: 0.9rem;
+	padding: 1% 2%;
+	font-weight: 600;
+	background-color: #131313;
+	color: #fff;
+}
+
+#season_select option {
+	font-size: 1rem;
+	font-weight: 600;
+}
+
+.episode_inner_card {
+	height: 140px;
+	display: flex;
+	align-items: center;
+	align-content: center;
+	border-bottom: 1px solid #444;
+}
+
+.episode_inner_card div {
+	height: 100px;
+}
+
+.episode_inner_card .ep_no {
+	width: 50px;
+	height: 100px;
+	font-size: 1.5rem;
+	text-align: center;
+	line-height: 100px;
+}
+
+.episode_inner_card .ep_img {
+	width: 200px;
+	vertical-align: middle;
+}
+
+.episode_inner_card .ep_img img {
+	height: 100px;
+}
+
+.episode_inner_card .ep_con {
+	width: 600px;
+	text-align: left;
+}
+
+.episode_inner_card .ep_con .ep_name {
+	font-weight: 800;
+	font-size: 1rem;
+}
+
+.episode_inner_card .ep_con .ep_time {
+	float: right;
+	font-weight: 800;
+}
+
+.episode_inner_card .ep_con .ep_txt {
+	font-size: 0.9rem;
+}

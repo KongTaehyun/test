@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+
+
+
+
+<mapper namespace="Client">
+	<!-- 아이디 검색 -->
+	<select id="SelectByEmail" parameterType="String" resultType="ClientVO">
+		select * from "client" where email = #{email}
+	</select>
+	
+	<!-- 회원가입 -->
+	<insert id="InsertNoMembership" parameterType="ClientVO">
+		insert into "client" (email, password) values(#{email}, #{password})
+	</insert>
+	<!-- 비번바꾸기 -->
+	<update id="ChangePassword" parameterType="Modify">
+	  	update "client" SET password = #{newPassword} where email = #{email}
+	</update>
+	<!-- 멤버쉽 불러오기 -->
+	<select id="LoadMembership" parameterType="String" resultType="String">
+		select membership from "client" where email = #{email}	
+	</select>
+	
+	<update id="ChangeMembership" parameterType="ClientVO">
+		update "client" SET membership = #{membership} where email = #{email}
+	</update>
+	
+	
+	<update id="ModifyBillindDate" parameterType="ClientVO">
+		update "client"  SET billingday = #{billingDate} where email = #{email}
+	</update>
+	
+	<update id="ChangePaymentInfo" parameterType="ClientPaymentVO">
+		update "client" SET cardnum = #{cardNum}, expiredate=#{expireDate}, birthyear=#{birthYear}, birthmonth=#{birthMonth}, birthday=#{birthDay} where email=#{email} 
+	</update>
+	
+	<!-- <select id="monthlyMember" resultMap="monthlyCount">
+		select count(*) as "count", to_char(regdate, 'mm') as "month" from "monthlymember"
+		group by to_char(regdate, 'mm') order by 2
+	</select>	
+	<resultMap type="map" id="monthlyCount">
+		<result column="month" property="mon_th"/>
+		<result column="count" property="coun_t"/>
+	</resultMap> -->
+</mapper>
